@@ -1,0 +1,24 @@
+﻿<!--
+    html-kod för ProduktLista-sidan uppdatering
+    anropas från action-metoden List i AdminController
+    skickas till vyn _SideBaseLayout, läggs in vid RenderBody()
+
+    "at-symbol"  anger början på C#-kod
+    model anger vilken klass eller viewModel som beskriver innehållet
+    ViewBag har skapats och skickats med från inkommande vy
+-->
+
+@model ProductListViewModel
+<!-- Rubrik                                                           -->
+<h1>@ViewBag.Rubrik</h1>
+
+<!--
+    tagHelper pekar till partial view _ProductEdit
+    _ProductEdit visar editeringsbar data för Product-klassen
+    Model med stor bokstav här
+-->
+@foreach (var produkt in Model.Lista)
+{
+    <partial name="_ProductEdit" model="produkt" />
+}
+
