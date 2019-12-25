@@ -1,0 +1,28 @@
+﻿<!--
+    html-kod för hemsidan
+    anropas från action-metoden Index i HomeController
+    skickas till vyn _SideBaseLayout, läggs in vid RenderBody()
+
+    "at-symbol"  anger början på C#-kod
+    model anger vilken klass eller viewModel som beskriver innehållet
+    ViewBag har skapats och skickats med från inkommande vy
+-->
+@model HomeViewModel
+<!-- Rubrik                                                        -->
+<h2>@ViewBag.Rubrik</h2>
+
+<!--
+    plockar in en partial view (delad vy)
+    roterande bilder
+-->
+<partial name="_Carousel" />
+
+<!--
+    tagHelper pekar till partial view _ProductDetailShared
+    _ProductDetailShared visar data för Product-klassen
+    Model med stor bokstav här
+-->
+@foreach (var produkt in Model.Lista)
+{
+    <partial name="_ProductDetailShared" model="produkt" />
+}

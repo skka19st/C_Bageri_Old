@@ -1,0 +1,23 @@
+﻿<!--
+    html-kod för Detaljerad Produkt-sida
+    anropas från action-metoden Detail i ProductController
+    skickas till vyn _SideBaseLayout, läggs in vid RenderBody()
+
+    "at-symbol"  anger början på C#-kod
+    model anger vilken klass eller viewModel som beskriver innehållet
+    ViewBag har skapats och skickats med från inkommande vy
+-->
+@model Product
+
+<h2>@ViewBag.Rubrik</h2>
+
+<!-- Model med stor bokstav här                                   -->
+<div class="thumbnail">
+    <img src="~/Images/carousel3.jpg" alt="">
+    <div class="caption-full">
+        <h3 class="pull-right">@Model.Price.ToString("c")</h3>
+        <h3>
+            <a href="#">@Model.Name</a>
+        </h3>
+    </div>
+</div>

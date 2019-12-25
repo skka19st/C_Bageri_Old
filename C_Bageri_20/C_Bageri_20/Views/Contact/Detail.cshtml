@@ -1,0 +1,31 @@
+﻿<!--
+    html-kod för Kontaktinfo-sida
+    anropas från action-metoden Detail i ContactController
+    skickas till vyn _SideBaseLayout, läggs in vid RenderBody()
+
+    "at-symbol"  anger början på C#-kod
+    model anger vilken klass eller viewModel som beskriver innehållet
+    ViewBag har skapats och skickats med från inkommande vy
+-->
+@model Contact
+
+<h2>@ViewBag.Rubrik</h2>
+
+<!-- Model med stor bokstav här                                   -->
+<div class="thumbnail">
+    <img src="~/Images/carousel1.jpg">
+    <div class="caption-full">
+        <h3>
+            <a href="#">@Model.Name</a>
+        </h3>
+        <h4>Hemsida: </h4>
+        <p>@Model.WebbPage</p>
+        <h4>Adress: </h4>
+        <p>@Model.StreetAdress</p>
+        <p>@Model.CityAdress</p>
+        <h4>Mail: </h4>
+        <p>@Model.Mail</p>
+        <h4>Telefon: </h4>
+        <p>@Model.Phone</p>
+    </div>
+</div>

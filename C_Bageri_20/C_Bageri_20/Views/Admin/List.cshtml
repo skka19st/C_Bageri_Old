@@ -1,0 +1,27 @@
+﻿<!--
+    html-kod för ProduktLista-sidan uppdatering
+    anropas från action-metoden List i AdminController
+    skickas till vyn _SideBaseLayout, läggs in vid RenderBody()
+
+    "at-symbol"  anger början på C#-kod
+    model anger vilken klass eller viewModel som beskriver innehållet
+    ViewBag har skapats och skickats med från inkommande vy
+-->
+
+@model ProductListViewModel
+<!-- Rubrik                                                           -->
+<h1>@ViewBag.Rubrik</h1>
+
+<!--
+    tagHelper pekar till partial view _ProductDetailShared
+    _ProductDetailShared visar data för product-klassen
+    Model med stor bokstav här
+-->
+@foreach (var produkt in Model.Lista)
+{
+    <partial name="_ProductEdit" model="produkt" />
+}@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
