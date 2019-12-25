@@ -40,14 +40,14 @@ namespace C_Bageri_20.Controllers
             return View(ProduktLista);
         }
 
-        // action-metod Detail returnerar till view Detail
+        // action-metod Edit returnerar till view Edit
         public IActionResult Edit(int id)
         {
             // skickar med fliknamnet till webben
             ViewBag.Title = "Bageri 2.0";
 
             // rubrik till webbsidan
-            ViewBag.Rubrik = "Editdetalj";
+            ViewBag.Rubrik = "Uppdatera";
 
             Product produkt = accessProdukt.GetProductById(id);
             if (produkt == null)
@@ -56,7 +56,7 @@ namespace C_Bageri_20.Controllers
                 return NotFound();
             }
 
-            // skickar data till vyn Detail
+            // skickar data till vyn Edit
             return View(produkt);
         }
     }
